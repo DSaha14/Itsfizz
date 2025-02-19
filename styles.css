@@ -1,0 +1,93 @@
+/* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  height: 100%; /* Ensure full height */
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(135deg, #6e8efb, #4a6cf7);
+  color: white;
+  text-align: center; /* Center text horizontally */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 800px; /* Adjust as needed */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.hero-title {
+  font-size: 6rem; /* Increased size */
+  margin: 0; /* Remove default margin */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero-subtitle {
+  font-size: 2rem; /* Increased size */
+  margin: 20px 0; /* Add some spacing */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 15px 30px; /* Increased padding */
+  font-size: 1.2rem; /* Increased size */
+  color: #4a6cf7;
+  background: white;
+  border-radius: 25px;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 1s forwards;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hero-button:hover {
+  background: #4a6cf7;
+  color: white;
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background animation */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+  background-size: 20px 20px;
+  z-index: 1;
+  animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200px);
+  }
+}
