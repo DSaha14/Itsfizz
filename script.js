@@ -1,3 +1,5 @@
+
+const gsap = require("gsap");
 gsap.from('.hero-title', {
     opacity: 0,
     y: 20,
